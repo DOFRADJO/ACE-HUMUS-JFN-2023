@@ -1,0 +1,23 @@
+REGIONS
+-------
+
+a region is a pecific geographical location to host your resources. GC has over 20+ regions around the world.
+They provide;
+
+-High availability
+-Low availability
+
+
+ZONES
+-----
+
+are smalle geographical locations to host your resources. GC has at least three(3) zones within every region.
+Zones are connected via low latency links.They provide;
+increased availability and fault tolerance within thesame region.
+
+
+Useful gcloud commands
+----------------------
+
+-gcloud compute regions list (list available regions)
+-gcloud zones list --filter='region<region-name>'

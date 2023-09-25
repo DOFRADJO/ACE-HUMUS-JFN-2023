@@ -1,0 +1,28 @@
+cloud computing
+---------------
+
+defnition;
+----------
+
+Cloud computing is the delivery shared pool of on-demand computing services over the public internet 
+that can be rapidly provitioned and released with minimal management effort or services provider interractions.
+
+
+Characteristics of cloud computing;
+-----------------------------------
+
+-On-Demand self-Services
+-Broad Network Access
+-Resource Pooling
+-Rapid Elasticity
+-Measured services 
+
+Advantages of Cloud Computing
+------------------------------
+
+-High availability
+-Reduce Latency(low latency)
+-Highly Reliable
+-Highly Secure
+-Cost effective and economics of scale
+-Time (saves time, reduce and even no down time)
