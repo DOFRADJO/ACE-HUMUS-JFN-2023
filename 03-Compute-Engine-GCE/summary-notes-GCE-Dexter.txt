@@ -1,0 +1,140 @@
+COMPUTE ENGINE
+--------------
+
+GCE is an IaaS
+It comes with a persistent disk, cloud Laod Balancing, auto scaling
+
+1) Machine Family
+  -------------
+
+--> General Purpose
+
+(E2, N2, N2D, N1) 
+Best price-performance ratio
+Web and application servers, Small-medium db, Dev environments
+
+
+--> Memory Optimized
+
+(M2, M1) 
+Ultra high memory workloads
+Large in-memory databases and In-memory analytics
+
+--> Compute Optimized
+(C2)
+Compute intensive workloads
+Gaming applications
+
+
+2) Machine Type
+   
+   e.g e2-standard-2:
+            e2 - Machine Type Family
+            standard - Type of workload
+            2 - Number of CPUs
+
+
+3)Image (0S)
+
+$ echo "Hello world from $(hostname) $(hostname -I)" > /var/www/html/index.html
+
+EXPLANATION OF COMMAND
+$(hostname) --> variable that will return hostname 
+$(hostname -I) --> variable that will return the internal ip address of host
+so the host name and internal ip address will appended to the endpoint index.html in /var/www/html/index.html
+
+4)IP address
+IP address is used to uniquely identify a resource
+internal and external IP address of vm are ephermal by default
+You can assign and release a static IP address
+
+
+5)Bootstrapping 
+is the process os installing tools, softwares or OS patch on VM instance launch
+You csn do so using a Startup script
+It increase boot time
+
+6)Instance Tempplate 
+Is a Blueprint to creating identical instances  
+It is used to create VM instances ad MIGs
+It can not be updated
+
+
+7)Custom Image
+Is a VM instance with your customised configurations
+Can be created from an instance, a persistent disk, a snapshot, another
+image, or a file in Cloud Storage
+Can be shared across projects
+
+8)Discounts
+-->Sustained Use Discounts 
+Automatic discounts for running VM instances for significant portion of the billing month
+e.g If you use VM for more than 25% of a month, you get a 20% to 50% discount on every incremental minute.
+Applicable for instances created by GKE and GCE
+Does NOT apply to E2 and A2, App Engine flexible VMs and Dataflow
+
+-->Committed use Discounts
+For workloads with predictable resource needs. Commit for 1 year or 3 years
+Up to 70% discount based on machine type and GPUs
+Applicable for instances created by GKE and GCE
+Does NOT apply to VMs created by App Engine flexible and Dataflow
+
+-->Preemptible/Sport VM
+Can be stopped by GCP any time (preempted) within 24 hours Instances get 30 second warning (to save anything they want to save)
+Use Preempt VM's if: your apps are fault tolerant, You are very cost sensitive
+Your workload is NOT immediate e.g Non immediate batch processing jobs
+
+NOT always available, NO SLA and CANNOT be migrated to regular VMs, NO Automatic Restarts
+Free Tier credits not applicable
+
+
+9)GCE Billing
+You are billed by the second (after a minimum of 1 minute)
+You will be billed for any storage, static IP attached with it even VM is stopped!
+
+10)Live Migration
+keep your VM instances running when a host system needs to be updated
+your running instance is migrated to another host in the same zone
+SUPPORTED for instances with local SSDs
+NOT SUPPORTED for GPUs and preemptible instances
+Availability Policy has two options; Migrate (default) and Terminate 
+Automatic restart  
+
+
+11)Custom Machine Type
+Create a machine type customized to your needs, Adjust vCPUs, memory and GPUs
+Billed per vCPUs, memory provisioned to each instance
+
+12)GPU
+Add a GPU to your VM for math intensive and graphics-intensive workloads
+Higher cost
+Use images with GPU libraries (Deep Learning) installed OTHERWISE, GPU will not be used
+NOT supported on shared-core or memory-optimized machine types
+On host maintenance can only have the value "Terminate VM instance"
+Recommended Availability policy for GPUs Automatic restart - on
+
+NB
+--
+
+Automatic Basic Monitoring is enabled
+CPU utilization, Network Bytes (in/out), Disk Throughput/IOPS
+For Memory Utilization & Disk Space Utilization - Cloud Monitoring agent is needed
+
+Choose Zone and Region based on: Cost, Regulations, Availability Needs, Latency and Specific Hardware needs
+
+pre-requisites to be able to create a VM instance
+-->Project -->Billing Account -->Compute Engines APIs should be enabled
+
+Sole-tenant nodes; Physical nodes reserved just for your enterpriseprise.
+
+VM Manager
+
+Firewall Rules
+
+
+
+
+
+
+
+
