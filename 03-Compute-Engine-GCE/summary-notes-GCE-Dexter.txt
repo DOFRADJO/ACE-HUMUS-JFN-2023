@@ -56,7 +56,7 @@ It increase boot time
 
 6)Instance Tempplate 
 Is a Blueprint to creating identical instances  
-It is used to create VM instances ad MIGs
+It is used to create VM instances and MIGs
 It can not be updated
 
 
@@ -84,7 +84,7 @@ Can be stopped by GCP any time (preempted) within 24 hours Instances get 30 seco
 Use Preempt VM's if: your apps are fault tolerant, You are very cost sensitive
 Your workload is NOT immediate e.g Non immediate batch processing jobs
 
-NOT always available, NO SLA and CANNOT be migrated to regular VMs, NO Automatic Restarts
+NOT always available, NO SLA(Service-Level Agreement) and CANNOT be migrated to regular VMs, NO Automatic Restarts
 Free Tier credits not applicable
 
 
@@ -93,7 +93,7 @@ You are billed by the second (after a minimum of 1 minute)
 You will be billed for any storage, static IP attached with it even VM is stopped!
 
 10)Live Migration
-keep your VM instances running when a host system needs to be updated
+keep your VM instances running when a host system needs to be updated(hardware and or software)
 your running instance is migrated to another host in the same zone
 SUPPORTED for instances with local SSDs
 NOT SUPPORTED for GPUs and preemptible instances
@@ -106,9 +106,9 @@ Create a machine type customized to your needs, Adjust vCPUs, memory and GPUs
 Billed per vCPUs, memory provisioned to each instance
 
 12)GPU
-Add a GPU to your VM for math intensive and graphics-intensive workloads
+Add a GPU to your VM for math intensive and graphics intensive workloads
 Higher cost
-Use images with GPU libraries (Deep Learning) installed OTHERWISE, GPU will not be used
+Use images with GPU libraries (Deep Learning) installed OTHERWISE GPU will not be used
 NOT supported on shared-core or memory-optimized machine types
 On host maintenance can only have the value "Terminate VM instance"
 Recommended Availability policy for GPUs Automatic restart - on
@@ -123,7 +123,7 @@ For Memory Utilization & Disk Space Utilization - Cloud Monitoring agent is need
 Choose Zone and Region based on: Cost, Regulations, Availability Needs, Latency and Specific Hardware needs
 
 pre-requisites to be able to create a VM instance
--->Project -->Billing Account -->Compute Engines APIs should be enabled
+-->Project -->Billing Account -->GCE API must be enabled
 
 Sole-tenant nodes; Physical nodes reserved just for your enterpriseprise.
 
