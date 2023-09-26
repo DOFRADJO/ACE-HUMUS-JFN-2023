@@ -4,7 +4,7 @@ cloud computing
 defnition;
 ----------
 
-Cloud computing is the delivery shared pool of on-demand computing services over the public internet 
+Cloud computing is the delivery of a shared pool of on-demand computing services over the public internet 
 that can be rapidly provitioned and released with minimal management effort or services provider interractions.
 
 
