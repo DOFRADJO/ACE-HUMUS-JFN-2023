@@ -41,7 +41,7 @@ $ echo "Hello world from $(hostname) $(hostname -I)" > /var/www/html/index.html
 EXPLANATION OF COMMAND
 $(hostname) --> variable that will return hostname 
 $(hostname -I) --> variable that will return the internal ip address of host
-so the host name and internal ip address will appended to the endpoint index.html in /var/www/html/index.html
+so the host name and internal ip address will appended to the endpoint "index.html" in /var/www/html/index.html
 
 4)IP address
 IP address is used to uniquely identify a resource
