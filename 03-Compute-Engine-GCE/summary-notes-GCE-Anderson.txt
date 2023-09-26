@@ -1,0 +1,63 @@
+COMPUTE ENGINE (IaaS)
+---------------------
+Some points to bear in mind when configuring a VM.
+
+1. Create and manage lifecycle of VM instance
+2. Balance the load and auto scaling for multiple VMs
+   -> use features :
+               - Load balancing
+               - auto scaling 
+
+3. Manage network conectivity and configuration for VMs instances
+
+4. Choose the machine family according to your machine type
+
+    Machine family   -->   Machine type (RAM, vCPU)     --> Description
+    --------------------------------------------------------------------
+    -General Purpose -->   E2, N2, N2D, N1              --> for smalls applications and databases
+    -Memory Optimzed -->   M1, M2                       --> for larges databases             
+    -Compute Optimzed -->  C2                           --> for gaming applications
+    -GPU              -->                               --> for intensive maths workload (AI/ML)
+
+
+5. Manage image (OS) : public or custom according to your needs
+        -RECOMMAND : linux image like CENTOS, UBUNTU...
+
+
+6. About ip adresses :
+       a) when the VM instance is stopped, the external ip adresse is lost.
+       b) if you want keep permanently your external ip adresse, set it static. Note that statics externals ip adresses is expensive.
+       c) externals ip adresses can not be the same for different resources, but two different resources in different corporate network can have thesame internal IP address
+       d) static externals ip adresses continue to be billed enve if they are no longer used.
+
+
+7. How to create a VM instance while configuring HTTP Server ? :
+       a) startup script : increase the lunch time
+       b) instance template : note that an instance template is globaly, you can use it to create a VM  instance in any region.
+       c) custom image : preferred. It's fast to have VM with sames caracteristics.
+
+
+8. Discount for use : 
+       --> COMMITTED USE DISCOUNT : set it when you the workload for your Enterprise. for 1 or 3 years, you can get up to 70% discount.
+       --> SOUSTAINED USE DISCOUNT : when your VM runs non-stop for months, you can get up from 20% to 50% discount.
+       --> VMs SPOT : if your workload is not immediate, you can get up to 80% discount for using spot VMs.
+
+
+9. NB1: you are billed per second after one (1) minute after VM is started, but not when it's stopped. Nevertheless, you are billed for all storage in the VM, whether you are started or not.
+   NB2: always create budget alerts and use budget exports to stay on top of billing.
+
+
+10. Enable live migration and availability policy : to migrate your VMs instances during troubleshooting and upgrades.
+
+
+11. If you want custom machine type :
+       -> you can set vCPU, RAM and GPU according to your needs
+       -> not that, you are billed per vCPU, RAM provisioned per hour and for each VM instance.
+
+
+12. When and why you can use GCPs machine type :
+       a) you want higher performance for maths intensives and graphics
+       b) you can use image with GPU libraries installed
+       c) not supported on all machine (Memory Optimzed or share-core)
+       d) on host, maintenance can only be set to "terminate VM instance"
+       e) RECOMMANDED availability policy for GCPs : automatic restart-on            
