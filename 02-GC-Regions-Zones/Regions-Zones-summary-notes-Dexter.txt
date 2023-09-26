@@ -5,7 +5,7 @@ a region is a pecific geographical location to host your resources. GC has over 
 They provide;
 
 -High availability
--Low availability
+-Low latency
 
 
 ZONES
@@ -19,5 +19,5 @@ increased availability and fault tolerance within thesame region.
 Useful gcloud commands
 ----------------------
 
--gcloud compute regions list (list available regions)
--gcloud zones list --filter='region<region-name>'
+-gcloud compute regions list    --->(list available regions)
+-gcloud zones list --filter='region<region-name>'   --->(list available zones in "region-name")
