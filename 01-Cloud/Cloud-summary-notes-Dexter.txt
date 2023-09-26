@@ -11,11 +11,11 @@ that can be rapidly provitioned and released with minimal management effort or s
 Characteristics of cloud computing;
 -----------------------------------
 
--On-Demand self-Services
--Broad Network Access
--Resource Pooling
--Rapid Elasticity
--Measured services 
+-On-Demand self-Services: You server yourself, you choose what resource you what
+-Broad Network Access: can be accessed over the public internet
+-Resource Pooling: co-tenancy, your 
+-Rapid Elasticity: can rapidly scale up or down(both horizontally and vertically)
+-Measured services: pay for what you use(in GCP you are billed by to the nearest second) 
 
 Advantages of Cloud Computing
 ------------------------------
