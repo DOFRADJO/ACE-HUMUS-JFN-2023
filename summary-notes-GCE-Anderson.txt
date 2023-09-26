@@ -27,7 +27,7 @@ Some points to bear in mind when configuring a VM.
 6. About ip adresses :
        a) when the VM instance is stopped, the external ip adresse is lost.
        b) if you want keep permanently your external ip adresse, set it static. Note that statics externals ip adresses is expensive.
-       c) externals ip adresses can be the same for differents VMs into the same project.
+       c) externals ip adresses can not be the same for different resources, but two different resources in different corporate network can have thesame internal IP address
        d) static externals ip adresses continue to be billed enve if they are no longer used.
 
 
@@ -43,7 +43,7 @@ Some points to bear in mind when configuring a VM.
        --> VMs SPOT : if your workload is not immediate, you can get up to 80% discount for using spot VMs.
 
 
-9. NB1: you are billed per seconde when the VM is started, but not when it's stopped. Nevertheless, you are billed for all storage in the VM, whether you are started or not.
+9. NB1: you are billed per second after one (1) minute after VM is started, but not when it's stopped. Nevertheless, you are billed for all storage in the VM, whether you are started or not.
    NB2: always create budget alerts and use budget exports to stay on top of billing.
 
 
