@@ -1,0 +1,32 @@
+Regions/GCE
+-----------
+
+gcloud config list                      ---=>lists all properties of the active configuration
+gcloud compute regions list	            ---=> Lists all available regions.
+gcloud compute zones list	            ---=> Lists all available zones.
+gcloud compute project-info describe	---=> Displays the default region and zone for your project.
+gcloud config set compute/region REGION	---=> Sets the default region for your gcloud configuration.
+gcloud config set compute/zone ZONE	    ---=> Sets the default zone for your gcloud configuration.
+gcloud compute instances list	        ---=>Lists all instances in the current region and zone.
+gcloud config unset                     ---=>is used to unset a property                                    
+
+
+
+Projects
+--------
+
+gcloud init                                   ---=> initialize or reinitialize gcloud(Setup configuration)
+gcloud config set core/project VALUE          ----=> set project 
+
+NB
+--
+Syntax  ---=> gcloud config set SECTION/PROPERTY VALUE
+                      
+           core, compute           ---=> SECTIONS
+           project, region, zone   ---=>PROPERTIES
+
+
+Specifying core is optional as it is the default SECTION! (gcloud config set project VALUE)
+Get more details with gcloud config set --help
+
+
