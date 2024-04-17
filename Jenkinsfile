@@ -1,13 +1,23 @@
 pipeline {
     agent any
+
     stages {
         stage('Checkout') {
             steps {
-                script {
-                    // The following command will clone your repository and check out the master branch by default.
-                    git credentialsId: 'jenkins-user-github', url: 'https://github.com/anderson-metsanou/Git-basics.git'
-                    // You can use 'ls -lart' to view all the files that have been cloned.
-                }
+                // Clone the repository
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/DOFRADJO/ACE-HUMUS-JFN-2023.git']]])
+            }
+        }
+        stage('Build') {
+            steps {
+                // Add build steps here (e.g., compiling, testing, etc.)
+                sh 'echo "Build stage"'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                // Add deployment steps here (e.g., deploying to a server)
+                sh 'echo "Deploy stage"'
             }
         }
     }
